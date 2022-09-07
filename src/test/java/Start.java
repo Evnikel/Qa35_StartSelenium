@@ -141,6 +141,6 @@ public class Start {
 
         // ****** find from table
         WebElement poland = List<WebElement> list = wd.findElements(By.tagName("td"));
-        //WebElement element1 = list.get(9); ///item1
+        //WebElement element1 = list.get(9); ///Poland
     }
 }
