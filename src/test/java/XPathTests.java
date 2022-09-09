@@ -18,7 +18,6 @@ public class XPathTests {
         // open login form
         WebElement loginTab = wd.findElement(By.xpath("//a[@href='/login']"));
         loginTab.click();
-        //fill email noa@gmail.com Nnoa12345$
         // evnikel@gmail.com  Elena1234$@
         WebElement inputEmail = wd.findElement(By.xpath("//input[@placeholder='Email']"));
         inputEmail.click();
