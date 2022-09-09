@@ -98,49 +98,51 @@ public class Start {
         // find items
 
         WebElement item1 = wd.findElement(By.cssSelector("a[href='#item1']"));
-        //WebElement item1 = wd.findElement(By.name("Item 1"));
-        //WebElement item1 = wd.findElement(By.cssSelector("[href $='m1']"));
-        //WebElement element = wd.findElement(By.tagName("a"));
-        //element.click();
+        WebElement item1_1 = wd.findElement(By.linkText("Item 1"));
+        WebElement item1_2 = wd.findElement(By.cssSelector("[href $='m1']"));
+        WebElement element = wd.findElement(By.tagName("a")); //Item1
+        element.click();
+        List<WebElement> list =wd.findElements(By.tagName("a"));
+        WebElement el =list.get(0);;
 
-        // Почему list полчеркивает? Или так как это булевая величина, тег а не может быть листом?
-        //WebElement item1 = List<WebElement> list =wd.findElements(By.tagName("a"));
-        //WebElement element1 = list.get(0); ///item1
-        //WebElement item1 = wd.findElement(By.className("nav-item"));
+        WebElement item =(wd.findElements(By.tagName("a"))).get(0);
+        WebElement item1_3 = wd.findElement(By.className("nav-item"));
 
-
-        // Same for everyone
 
         WebElement item2 = wd.findElement(By.cssSelector("a[href='#item2']"));
-        //WebElement item2 = wd.findElement(By.name("Item 2"));
-        //WebElement item2 = wd.findElement(By.cssSelector("[href $='m2']"));
-        //WebElement item2 = List<WebElement> list =wd.findElements(By.tagName("a"));
-        //WebElement element2 = list.get(1); ///item2
-        //element2.click()
+        WebElement item2_5 = wd.findElement(By.linkText("Item 2")); // error
+        WebElement item2_1 = wd.findElement(By.cssSelector("[href $='m2']"));
+        WebElement element2 = wd.findElements(By.tagName("a")).get(1); ///item2
+        element2.click();
 
         WebElement item3 = wd.findElement(By.cssSelector("a[href='#item3']"));
-        //WebElement item3 = wd.findElement(By.name("Item 3"));
-        //WebElement item3 = wd.findElement(By.cssSelector("[href $='m3']"));
-        //WebElement item3 = List<WebElement> list =wd.findElements(By.tagName("a"));
-        //WebElement element3 = list.get(2); ///item3
-        //element3.click()
+        WebElement item3_1 = wd.findElement(By.cssSelector("[href $='m3']"));
+        List<WebElement> list1 =wd.findElements(By.tagName("a"));
+        WebElement element3 = list1.get(2); ///item3
+        element3.click();
 
         WebElement item4 = wd.findElement(By.cssSelector("a[href='#item4']"));
-        //WebElement item4 = wd.findElement(By.name("Item 4"));
-        //WebElement item4 = wd.findElement(By.cssSelector("[href $='m4']"));
-        //WebElement item4 = List<WebElement> list =wd.findElements(By.tagName("a"));
-        //WebElement element4 = list.get(3); ///item4
-        //element4.click()
+        WebElement item4_1 = wd.findElement(By.cssSelector("[href $='m4']"));
+        List<WebElement> list2 =wd.findElements(By.tagName("a"));
+        WebElement element4 = list2.get(3); ///item4
+        element4.click();
 
 
         //find element of form
-        WebElement name = wd.findElement(By.name("Type your name"));
-        WebElement surename = wd.findElement(By.name("Type your surename"));
+        WebElement name = wd.findElement(By.name("name"));
+        WebElement name1 = wd.findElement(By.cssSelector("[placeholder='Type your name']"));
+        WebElement surename = wd.findElement(By.name("surename"));
+        WebElement surename1 = wd.findElement(By.cssSelector("[placeholder='Type your surename']"));
         WebElement send = wd.findElement(By.className("btn"));
-        // WebElement send = wd.findElement(By.name("Send"));
+        WebElement send2 = wd.findElement(By.cssSelector(".btn"));
+
 
         // ****** find from table
-        WebElement poland = List<WebElement> list = wd.findElements(By.tagName("td"));
-        //WebElement element1 = list.get(9); ///Poland
+        List<WebElement> list4 = wd.findElements(By.tagName("td"));
+        WebElement element1 = list4.get(9); ///Poland
+        String text = element1.getText();
+        System.out.println(text);
+
+        wd.quit();
     }
 }
