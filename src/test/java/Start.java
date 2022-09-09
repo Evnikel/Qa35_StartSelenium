@@ -60,9 +60,11 @@ public class Start {
         // By linkText
         wd.findElement(By.linkText("ABOUT"));
         wd.findElement(By.partialLinkText("AB"));
+
         // By.name
-        wd.findElement(By.name("name"));
-        wd.findElement(By.name("surename"));
+
+        //wd.findElement(By.name("name"));
+        //wd.findElement(By.name("surename"));
 
         // By.ccsSelector
         //by tagname
@@ -90,6 +92,18 @@ public class Start {
         wd.quit();
     }
 
+    @Test
+    public void loginTest1() {
+
+        wd = new ChromeDriver();
+        //wd=new FirefoxDriver();
+        wd.navigate().to("file:///C:/Users/evnik/Desktop/Auto%20Testing%20Israel/%D0%A3%D1%80%D0%BE%D0%BA%2005.09/index.html");
+
+        // By.name
+
+        wd.findElement(By.name("name"));
+        wd.findElement(By.name("surename"));
+    }
     @Test
     public void homework(){
         wd = new ChromeDriver();
