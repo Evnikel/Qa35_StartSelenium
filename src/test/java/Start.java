@@ -2,7 +2,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -11,15 +10,15 @@ public class Start {
     WebDriver wd;
 
     @Test
-    public void goToPhoneBook(){
+    public void goToPhoneBook() {
         // open browser
-        wd=new ChromeDriver();
+        wd = new ChromeDriver();
         //go to phonebook
         //  wd.get("https://contacts-app.tobbymarshall815.vercel.app/"); //whiout history
 
         wd.navigate().to("https://contacts-app.tobbymarshall815.vercel.app/");
         wd.navigate().to("https://www.google.com/");
-        wd.quit();
+        //wd.quit();
         //with history
 
         wd.navigate().back();
@@ -27,28 +26,28 @@ public class Start {
         wd.navigate().refresh();
         //close browser
         //wd.close();
-        //wd.quit();
+        wd.quit();
     }
 
     @Test
-    public void loginTest(){
+    public void loginTest() {
 
-        wd=new ChromeDriver();
-        //wd=new FirefoxDriver();
+        wd = new ChromeDriver();
+        //wd = new FirefoxDriver();
         wd.navigate().to("https://contacts-app.tobbymarshall815.vercel.app/");
-
-        // open loginPage :find loginTab + click
-        //fill email  : find ElementEmail + type "email"
-        //fill password :find ElementPassword + type "password"
-        // login submit : find login button _ click
-        // Assert (ex res=ac res)
-
+/*
+        open loginPage :find loginTab + click
+        fill email  : find ElementEmail + type "email"
+        fill password :find ElementPassword + type "password"
+        login submit : find login button _ click
+        Assert (ex res=ac res)
+*/
 
         // [PHONEBOOK ;Home Component ]
         WebElement element = wd.findElement(By.tagName("h1"));  /// PHONEBOOK
         element.click();
 
-        List<WebElement> list =wd.findElements(By.tagName("h1"));
+        List<WebElement> list = wd.findElements(By.tagName("h1"));
 
         WebElement element1 = list.get(1); ///Home Component
         element1.click();
@@ -104,8 +103,9 @@ public class Start {
         wd.findElement(By.name("name"));
         wd.findElement(By.name("surename"));
     }
+
     @Test
-    public void homework(){
+    public void homework() {
         wd = new ChromeDriver();
         wd.navigate().to("file:///C:/Users/evnik/Desktop/Auto%20Testing%20Israel/%D0%A3%D1%80%D0%BE%D0%BA%2005.09/index.html");
 
@@ -116,10 +116,11 @@ public class Start {
         WebElement item1_2 = wd.findElement(By.cssSelector("[href $='m1']"));
         WebElement element = wd.findElement(By.tagName("a")); //Item1
         element.click();
-        List<WebElement> list =wd.findElements(By.tagName("a"));
-        WebElement el =list.get(0);;
+        List<WebElement> list = wd.findElements(By.tagName("a"));
+        WebElement el = list.get(0);
+        ;
 
-        WebElement item =(wd.findElements(By.tagName("a"))).get(0);
+        WebElement item = (wd.findElements(By.tagName("a"))).get(0);
         WebElement item1_3 = wd.findElement(By.className("nav-item"));
 
 
@@ -131,13 +132,13 @@ public class Start {
 
         WebElement item3 = wd.findElement(By.cssSelector("a[href='#item3']"));
         WebElement item3_1 = wd.findElement(By.cssSelector("[href $='m3']"));
-        List<WebElement> list1 =wd.findElements(By.tagName("a"));
+        List<WebElement> list1 = wd.findElements(By.tagName("a"));
         WebElement element3 = list1.get(2); ///item3
         element3.click();
 
         WebElement item4 = wd.findElement(By.cssSelector("a[href='#item4']"));
         WebElement item4_1 = wd.findElement(By.cssSelector("[href $='m4']"));
-        List<WebElement> list2 =wd.findElements(By.tagName("a"));
+        List<WebElement> list2 = wd.findElements(By.tagName("a"));
         WebElement element4 = list2.get(3); ///item4
         element4.click();
 

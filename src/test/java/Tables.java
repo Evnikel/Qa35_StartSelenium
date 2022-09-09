@@ -11,15 +11,15 @@ public class Tables {
     WebDriver wd;
 
     @Test
-    public void wschoolTables(){
-        wd= new ChromeDriver();
+    public void wschoolTables() {
+        wd = new ChromeDriver();
         wd.navigate().to("https://www.w3schools.com/html/html_tables.asp");
 
         // print count rows in table
 
-        List<WebElement> listRows =wd.findElements(By.cssSelector("#customers tr"));
-        System.out.println("Count of rows    "+ listRows.size());
-        Assert.assertEquals(listRows.size(),7);
+        List<WebElement> listRows = wd.findElements(By.cssSelector("#customers tr"));
+        System.out.println("Count of rows    " + listRows.size());
+        Assert.assertEquals(listRows.size(), 7);
 
         // print last rows
         WebElement lastRow = wd.findElement(By.cssSelector("#customers tr:last-child"));
@@ -29,27 +29,27 @@ public class Tables {
 
         //#customers tr:first-child th
         List<WebElement> listColumns = wd.findElements(By.cssSelector("#customers th"));
-        Assert.assertEquals(listColumns.size(),3);
+        Assert.assertEquals(listColumns.size(), 3);
 
         // print text Canada
 
         WebElement canada = wd.findElement(By.cssSelector("#customers tr:nth-child(6) td:last-child"));
         System.out.println(canada.getText());
-        Assert.assertEquals(canada.getText(),"Canada");
+        Assert.assertEquals(canada.getText(), "Canada");
 
 
     }
 
     @Test
-    public void homeWorkTable(){
-        wd=new ChromeDriver();
+    public void homeWorkTable() {
+        wd = new ChromeDriver();
         wd.navigate().to("file:///C:/Users/evnik/Desktop/Auto%20Testing%20Israel/%D0%A3%D1%80%D0%BE%D0%BA%2005.09/index.html");// url to index.html
 
 
         // print count rows in table
-        List<WebElement> listRows =wd.findElements(By.cssSelector("tr"));
-        System.out.println("Count of rows    "+ listRows.size());
-        Assert.assertEquals(listRows.size(),4);
+        List<WebElement> listRows = wd.findElements(By.cssSelector("tr"));
+        System.out.println("Count of rows    " + listRows.size());
+        Assert.assertEquals(listRows.size(), 4);
 
         // print last rows
         WebElement lastRow = wd.findElement(By.cssSelector("tr:last-child"));
@@ -57,11 +57,11 @@ public class Tables {
 
         // print count of columns
         List<WebElement> listColumns = wd.findElements(By.cssSelector("tr:first-child td"));
-        Assert.assertEquals(listColumns.size(),3);
+        Assert.assertEquals(listColumns.size(), 3);
 
         // print text
         WebElement israel = wd.findElement(By.cssSelector("tr:nth-child(2) td:nth-child(2)"));
         System.out.println(israel.getText());
-        Assert.assertEquals(israel.getText(),"Israel");
+        Assert.assertEquals(israel.getText(), "Israel");
     }
 }
