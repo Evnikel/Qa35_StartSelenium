@@ -48,18 +48,33 @@ public class Tables {
 
         // print count rows in table
         List<WebElement> listRows = wd.findElements(By.cssSelector("tr"));
+        List<WebElement> rows = wd.findElements(By.xpath("//tr"));
+
+        wd.findElement(By.xpath( "//table[@id='country-table']/tbody/tr"));
+        wd.findElement(By.cssSelector( "table#country-table>tbody>tr"));
+
+
+        wd.findElement(By.xpath("//table[@id='country-table']//tr"));
+        wd.findElement(By.cssSelector( "table#country-table tr"));
+
+        wd.findElement(By.xpath("//*[@id='country-table']//tr"));
+        wd.findElement(By.cssSelector("#country-table tr"));
         System.out.println("Count of rows    " + listRows.size());
         Assert.assertEquals(listRows.size(), 4);
 
         // print last rows
-        WebElement lastRow = wd.findElement(By.cssSelector("tr:last-child"));
+        WebElement lastRow = wd.findElement(By.xpath("//tr[last()]"));
+        WebElement last1Row = wd.findElement(By.cssSelector("tr:last-child"));
         System.out.println(lastRow.getText());
+        Assert.assertEquals(lastRow.getText(),"Poland Chine Mexico");
 
         // print count of columns
+        List<WebElement> columns = wd.findElements(By.xpath("//tr[1]/td"));
         List<WebElement> listColumns = wd.findElements(By.cssSelector("tr:first-child td"));
         Assert.assertEquals(listColumns.size(), 3);
 
         // print text
+        WebElement israelText= wd.findElement(By.xpath("//tr[2]/td[2]"));
         WebElement israel = wd.findElement(By.cssSelector("tr:nth-child(2) td:nth-child(2)"));
         System.out.println(israel.getText());
         Assert.assertEquals(israel.getText(), "Israel");
