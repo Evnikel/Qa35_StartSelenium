@@ -125,7 +125,7 @@ public class Start {
 
 
         WebElement item2 = wd.findElement(By.cssSelector("a[href='#item2']"));
-        WebElement item2_5 = wd.findElement(By.linkText("Item 2")); // error
+        WebElement item2_5 = wd.findElement(By.linkText("Item 2"));
         WebElement item2_1 = wd.findElement(By.cssSelector("[href $='m2']"));
         WebElement element2 = wd.findElements(By.tagName("a")).get(1); ///item2
         element2.click();
