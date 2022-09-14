@@ -51,7 +51,7 @@ public class HomeWork {
         wd.findElement(By.cssSelector("div.first.list"));
 
         wd.findElement(By.xpath("//div[contains(@class,'st')]"));//не хватало одной круглой скобки
-        wd.findElement(By.cssSelector("div.*st"));
+        wd.findElement(By.cssSelector("div. *'st'"));
 
         wd.findElement(By.xpath("//div[@id=’idName’]//h1[last()]"));
         wd.findElement(By.cssSelector("div#idName h1:list-child"));
@@ -60,7 +60,7 @@ public class HomeWork {
         wd.findElement(By.cssSelector("table#id tr:list-child"));
 
         wd.findElement(By.xpath("//a[starts-with(@id,'ret')]"));
-        wd.findElement(By.cssSelector("a#^ret"));
+        wd.findElement(By.cssSelector("a# ^'ret'"));
 
     }
 }
